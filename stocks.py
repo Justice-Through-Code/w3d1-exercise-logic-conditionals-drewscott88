@@ -11,7 +11,7 @@ def stock_purchases():
     client_name = input('What is your name? ')
     # 1.2 TODO: Ask the client how many dollars they would like to invest (use the string: "How much would you like to invest? $")
     # and save it into a variable
-    invest_amount = input("How much would you like to invest? $")
+    invest_amount = int(input("How much would you like to invest? $"))
     # NOTE: When you use the `input` function to get user input, what do numbers get saved as?
 
     # 1.3 TODO: Uncomment the line below to ask the client which stock they're interested in.
@@ -24,19 +24,23 @@ def stock_purchases():
     # 1.4 TODO: Use `if/elif/else` conditional logic to determine how much stock the client can buy,
     # and save it in a variable
     shares = 0
-    if stock_name == "amazon":
-        shares = invest_amount / amazon
-    elif stock_name == "apple":
-        shares = invest_amount / apple
-    elif stock_name == "fb":
-        shares = invest_amount / fb
-    elif stock_name == "google":
-        shares = invest_amount / google
-    elif stock_name == "msft":
-        shares = invest_amount / msft
-    else:
-        print("Invalid stock name entered.")
+    if stock_name == "Amazon":
+        shares = invest_amount // amazon
+        stock_price = amazon
+    elif stock_name == "Apple":
+        shares = invest_amount // apple
+        stock_price = apple
+    elif stock_name == "Facebook":
+        shares = invest_amount // fb
+        stock_price = fb
+    elif stock_name == "Google":
+        shares = invest_amount // google
+        stock_price = google
+    elif stock_name == "Microsoft":
+        shares = invest_amount // msft
+        stock_price = msft
+
     # 1.5 TODO: Once you've calculated the number of stocks that can be purchased,
     # Use an f-string to print the result for the client, ala:
     # Alex has $5000 to invest and can buy 50 shares of Apple at the current price of $100.
-    print(f"{client_name} has ${invest_amount} to invest and can buy {int(shares)} shares of {stock_name} at the current price of $100.")
+    print(f"{client_name} has ${invest_amount} to invest and can buy {int(shares)} shares of {stock_name} at the current price of ${stock_price}.")
