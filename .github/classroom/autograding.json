@@ -9,6 +9,16 @@
       "comparison": "included",
       "timeout": 2,
       "points": null
+    },
+    {
+      "name": "test_stocks.py",
+      "setup": "",
+      "run": "python3 -m unittest",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 2,
+      "points": null
     }
   ]
 }
